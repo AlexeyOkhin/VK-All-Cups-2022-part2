@@ -13,6 +13,10 @@
 		0C4AEBDC296854E000D5DD40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4AEBDA296854E000D5DD40 /* Main.storyboard */; };
 		0C4AEBDE296854E200D5DD40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C4AEBDD296854E200D5DD40 /* Assets.xcassets */; };
 		0C4AEBE1296854E200D5DD40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4AEBDF296854E200D5DD40 /* LaunchScreen.storyboard */; };
+		0C4AEBE92968581D00D5DD40 /* MultistageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AEBE82968581D00D5DD40 /* MultistageController.swift */; };
+		0C4AEBED296862F300D5DD40 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AEBEC296862F300D5DD40 /* QuestionModel.swift */; };
+		0C4AEBEF29686E1800D5DD40 /* MultistageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AEBEE29686E1800D5DD40 /* MultistageCollectionViewCell.swift */; };
+		0C4AEBF1296877C000D5DD40 /* MultistageHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AEBF0296877C000D5DD40 /* MultistageHeaderReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		0C4AEBDD296854E200D5DD40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C4AEBE0296854E200D5DD40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C4AEBE2296854E200D5DD40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C4AEBE82968581D00D5DD40 /* MultistageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultistageController.swift; sourceTree = "<group>"; };
+		0C4AEBEC296862F300D5DD40 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		0C4AEBEE29686E1800D5DD40 /* MultistageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultistageCollectionViewCell.swift; sourceTree = "<group>"; };
+		0C4AEBF0296877C000D5DD40 /* MultistageHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultistageHeaderReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +66,33 @@
 			children = (
 				0C4AEBD4296854E000D5DD40 /* AppDelegate.swift */,
 				0C4AEBD6296854E000D5DD40 /* SceneDelegate.swift */,
-				0C4AEBD8296854E000D5DD40 /* ViewController.swift */,
-				0C4AEBDA296854E000D5DD40 /* Main.storyboard */,
+				0C4AEBEA296858EE00D5DD40 /* Multistage */,
+				0C4AEBEB2968629300D5DD40 /* MainFlow */,
 				0C4AEBDD296854E200D5DD40 /* Assets.xcassets */,
 				0C4AEBDF296854E200D5DD40 /* LaunchScreen.storyboard */,
 				0C4AEBE2296854E200D5DD40 /* Info.plist */,
 			);
 			path = "VK AllCups 2022 part2";
+			sourceTree = "<group>";
+		};
+		0C4AEBEA296858EE00D5DD40 /* Multistage */ = {
+			isa = PBXGroup;
+			children = (
+				0C4AEBE82968581D00D5DD40 /* MultistageController.swift */,
+				0C4AEBEE29686E1800D5DD40 /* MultistageCollectionViewCell.swift */,
+				0C4AEBEC296862F300D5DD40 /* QuestionModel.swift */,
+				0C4AEBF0296877C000D5DD40 /* MultistageHeaderReusableView.swift */,
+			);
+			path = Multistage;
+			sourceTree = "<group>";
+		};
+		0C4AEBEB2968629300D5DD40 /* MainFlow */ = {
+			isa = PBXGroup;
+			children = (
+				0C4AEBD8296854E000D5DD40 /* ViewController.swift */,
+				0C4AEBDA296854E000D5DD40 /* Main.storyboard */,
+			);
+			path = MainFlow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +166,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C4AEBE92968581D00D5DD40 /* MultistageController.swift in Sources */,
+				0C4AEBEF29686E1800D5DD40 /* MultistageCollectionViewCell.swift in Sources */,
 				0C4AEBD9296854E000D5DD40 /* ViewController.swift in Sources */,
 				0C4AEBD5296854E000D5DD40 /* AppDelegate.swift in Sources */,
+				0C4AEBF1296877C000D5DD40 /* MultistageHeaderReusableView.swift in Sources */,
 				0C4AEBD7296854E000D5DD40 /* SceneDelegate.swift in Sources */,
+				0C4AEBED296862F300D5DD40 /* QuestionModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
