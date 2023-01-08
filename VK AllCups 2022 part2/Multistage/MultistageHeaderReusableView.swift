@@ -18,7 +18,7 @@ class MultistageHeaderReusableView: UICollectionReusableView {
     }()
 
     func configure(question: String) {
-        backgroundColor = .cyan
+        backgroundColor = .systemTeal
         title.text = question
         addSubview(title)
 

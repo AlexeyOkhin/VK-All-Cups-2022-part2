@@ -7,14 +7,13 @@
 
 import UIKit
 
-class MultistageCollectionViewCell: UICollectionViewCell {
+final class MultistageCollectionViewCell: UICollectionViewCell {
 
     static let reusebleID = "MultistageCollectionViewCell"
 
-    //private var statusAnswer = false
-    private var buttons = [MultistageCellButton]()
-
     var didTaped: ((_ id: Int?)-> Void)?
+
+    private var buttons = [MultistageCellButton]()
 
     private lazy var stackButtons: UIStackView = {
         let stack = UIStackView()
@@ -37,14 +36,12 @@ class MultistageCollectionViewCell: UICollectionViewCell {
         makeConstraint()
     }
 
-
-    private func makeConstraint() {
-        contentView.addSubview(stackButtons)
-        stackButtons.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
-        stackButtons.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        stackButtons.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
-        stackButtons.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        buttons = []
+        stackButtons.arrangedSubviews.forEach {
+            $0.removeFromSuperview()
+        }
     }
 
     func configure(model: QuestionsModel) {
@@ -71,22 +68,35 @@ class MultistageCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    @objc func didTap(sender: UITapGestureRecognizer) {
+    @objc private func didTap(sender: UITapGestureRecognizer) {
 
         didTaped?(sender.view?.tag)
+        //sender.view?.backgroundColor = .red
+        //updateTheme()
+        //bounce()
         //buttons[sender.view?.tag!]
 //        buttons.forEach {
 //            $0.percentLabel.isHidden = false
 //        }
 
     }
-
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        buttons = []
-        stackButtons.arrangedSubviews.forEach {
-            $0.removeFromSuperview()
-        }
+    private func makeConstraint() {
+        contentView.addSubview(stackButtons)
+        stackButtons.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
+        stackButtons.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        stackButtons.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
+        stackButtons.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
-    
+
+    private func bounce(_ bounce: Bool) {
+        UIView.animate(
+            withDuration: 0.8,
+            delay: 0,
+            usingSpringWithDamping: 0.4,
+            initialSpringVelocity: 0.8,
+            options: [.allowUserInteraction, .beginFromCurrentState],
+            animations: { self.transform = bounce ? CGAffineTransform(scaleX: 0.8, y: 0.8) : .identity },
+            completion: nil)
+    }
+
 }

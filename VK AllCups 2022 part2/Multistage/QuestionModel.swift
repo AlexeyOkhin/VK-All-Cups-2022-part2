@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct QuestionsModel {
+class QuestionsModel {
     var isAnswered = false
     let question: String
     var answers: [Answer]
@@ -16,8 +16,21 @@ struct QuestionsModel {
             answers.reduce( 0, {$0 + $1.countEnter})
         }
     }
+    init(isAnswered: Bool = false, question: String, answers: [Answer]) {
+        self.isAnswered = isAnswered
+        self.question = question
+        self.answers = answers
+    }
 
-    mutating func getPercents() {
+    func resetViews() {
+        isAnswered = false
+        for i in 0...answers.count - 1 {
+            answers[i].isTaped = false
+        }
+
+    }
+
+    func getPercents() {
         for i in 0...answers.count - 1 {
             answers[i].pecent = answers[i].countEnter * 100 / countRespondPeople
         }

@@ -9,7 +9,9 @@ import UIKit
 
 class MultistageController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
-    var questions = QuestionsModel.sampleData
+    let questions = QuestionsModel.sampleData
+
+    //MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,13 @@ class MultistageController: UICollectionViewController, UICollectionViewDelegate
         self.collectionView.showsVerticalScrollIndicator = false
         collectionView.allowsMultipleSelection = false
 
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        questions.forEach { mod in
+            mod.resetViews()
+        }
     }
 
     // MARK: UICollectionViewDataSource
@@ -47,6 +56,8 @@ class MultistageController: UICollectionViewController, UICollectionViewDelegate
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MultistageCollectionViewCell.reusebleID, for: indexPath) as! MultistageCollectionViewCell
         cell.configure(model: questions[indexPath.section % questions.count])
 
+        animationCell(cell, index: nil, withReload: false)
+
         cell.didTaped = { [weak self] id in
             guard let self = self else { return }
             let cellId = indexPath.section % self.questions.count
@@ -55,7 +66,11 @@ class MultistageController: UICollectionViewController, UICollectionViewDelegate
             self.questions[cellId].isAnswered = true
             self.questions[cellId].answers[id!].countEnter += 1
             self.questions[cellId].getPercents()
-            collectionView.reloadItems(at: [indexPath])
+
+            //collectionView.reloadItems(at: [indexPath])
+
+            self.animationCell(cell, index: indexPath, withReload: true)
+            //collectionView.reloadData()
         }
 
         return cell
@@ -76,7 +91,25 @@ class MultistageController: UICollectionViewController, UICollectionViewDelegate
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.bounds.width, height: 60)
+        return CGSize(width: view.bounds.width, height: 50)
+    }
+
+    //MARK: - Private methods
+
+    fileprivate func animationCell(_ cell: MultistageCollectionViewCell, index: IndexPath?, withReload: Bool) {
+        cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
+
+        UIView.animate(withDuration: 0.3, animations: {
+            cell.layer.transform = CATransform3DMakeScale(1.05,1.05,1)
+        },completion: { finished in
+            UIView.animate(withDuration: 0.1, animations: {
+                cell.layer.transform = CATransform3DMakeScale(1,1,1)
+
+            }) { finished in
+                guard let index else { return }
+                withReload ? self.collectionView.reloadItems(at: [index]) : nil
+            }
+        })
     }
 
 //    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
