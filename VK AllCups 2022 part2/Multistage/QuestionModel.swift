@@ -25,7 +25,7 @@ struct QuestionsModel {
 }
 
 struct Answer {
-    //var answer: (answer: String, isTrue: Bool, isSelected: Bool)
+
     let textAnswer: String
     var isTrueAnswer: Bool
     var countEnter: Int
@@ -38,7 +38,7 @@ struct Answer {
 extension QuestionsModel {
     static var sampleData = [
         QuestionsModel(question: "В каком году был представлен Swift", answers: [
-            Answer(textAnswer: "В каком году был представлен SwiftВ каком году был представлен SwiftВ каком году был представлен Swift", isTrueAnswer: false, countEnter: 0, isTaped: false),
+            Answer(textAnswer: "2011", isTrueAnswer: false, countEnter: 0, isTaped: false),
             Answer(textAnswer: "2012", isTrueAnswer: false, countEnter: 0, isTaped: false),
             Answer(textAnswer: "2013", isTrueAnswer: false, countEnter: 0, isTaped: false),
             Answer(textAnswer: "2014", isTrueAnswer: true, countEnter: 0, isTaped: false),

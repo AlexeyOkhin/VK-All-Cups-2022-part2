@@ -12,7 +12,7 @@ class MultistageCellButton: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 2
+        label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .black
         label.textAlignment = .left
@@ -66,10 +66,13 @@ class MultistageCellButton: UIView {
         addSubview(answerTrueImage)
         addSubview(percentLabel)
 
+        titleLabel.widthAnchor.constraint(equalToConstant: 200).priority = .defaultLow
+
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            titleLabel.widthAnchor.constraint(equalToConstant: 200),
 
             percentLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             percentLabel.widthAnchor.constraint(equalToConstant: 48),
@@ -80,6 +83,7 @@ class MultistageCellButton: UIView {
             answerTrueImage.centerYAnchor.constraint(equalTo: centerYAnchor),
             answerTrueImage.trailingAnchor.constraint(equalTo: percentLabel.leadingAnchor, constant: -16)
         ])
+
         
     }
 }
