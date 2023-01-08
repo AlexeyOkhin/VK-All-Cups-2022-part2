@@ -17,6 +17,7 @@
 		0C4AEBED296862F300D5DD40 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AEBEC296862F300D5DD40 /* QuestionModel.swift */; };
 		0C4AEBEF29686E1800D5DD40 /* MultistageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AEBEE29686E1800D5DD40 /* MultistageCollectionViewCell.swift */; };
 		0C4AEBF1296877C000D5DD40 /* MultistageHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AEBF0296877C000D5DD40 /* MultistageHeaderReusableView.swift */; };
+		0C4AEBF42969BCA700D5DD40 /* MultistageCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AEBF32969BCA700D5DD40 /* MultistageCellButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		0C4AEBEC296862F300D5DD40 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		0C4AEBEE29686E1800D5DD40 /* MultistageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultistageCollectionViewCell.swift; sourceTree = "<group>"; };
 		0C4AEBF0296877C000D5DD40 /* MultistageHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultistageHeaderReusableView.swift; sourceTree = "<group>"; };
+		0C4AEBF32969BCA700D5DD40 /* MultistageCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultistageCellButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +80,10 @@
 		0C4AEBEA296858EE00D5DD40 /* Multistage */ = {
 			isa = PBXGroup;
 			children = (
+				0C4AEBEC296862F300D5DD40 /* QuestionModel.swift */,
+				0C4AEBF22969BAA100D5DD40 /* Elements */,
 				0C4AEBE82968581D00D5DD40 /* MultistageController.swift */,
 				0C4AEBEE29686E1800D5DD40 /* MultistageCollectionViewCell.swift */,
-				0C4AEBEC296862F300D5DD40 /* QuestionModel.swift */,
 				0C4AEBF0296877C000D5DD40 /* MultistageHeaderReusableView.swift */,
 			);
 			path = Multistage;
@@ -93,6 +96,14 @@
 				0C4AEBDA296854E000D5DD40 /* Main.storyboard */,
 			);
 			path = MainFlow;
+			sourceTree = "<group>";
+		};
+		0C4AEBF22969BAA100D5DD40 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				0C4AEBF32969BCA700D5DD40 /* MultistageCellButton.swift */,
+			);
+			path = Elements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C4AEBF42969BCA700D5DD40 /* MultistageCellButton.swift in Sources */,
 				0C4AEBE92968581D00D5DD40 /* MultistageController.swift in Sources */,
 				0C4AEBEF29686E1800D5DD40 /* MultistageCollectionViewCell.swift in Sources */,
 				0C4AEBD9296854E000D5DD40 /* ViewController.swift in Sources */,
