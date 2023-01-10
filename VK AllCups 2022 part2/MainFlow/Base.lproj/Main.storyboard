@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="1113.8461538461538" y="59.715639810426538"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Two Columns Collection View Controller-->
         <scene sceneID="fxg-ML-2bD">
             <objects>
-                <collectionViewController id="gx1-bL-gJD" sceneMemberID="viewController">
+                <collectionViewController id="gx1-bL-gJD" customClass="TwoColumnsCollectionViewController" customModule="VK_AllCups_2022_part2" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="uoF-tC-U2c">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

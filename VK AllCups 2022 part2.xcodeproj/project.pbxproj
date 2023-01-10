@@ -18,6 +18,11 @@
 		0C4AEBEF29686E1800D5DD40 /* MultistageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AEBEE29686E1800D5DD40 /* MultistageCollectionViewCell.swift */; };
 		0C4AEBF1296877C000D5DD40 /* MultistageHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AEBF0296877C000D5DD40 /* MultistageHeaderReusableView.swift */; };
 		0C4AEBF42969BCA700D5DD40 /* MultistageCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AEBF32969BCA700D5DD40 /* MultistageCellButton.swift */; };
+		0C4AEC01296B0B3A00D5DD40 /* TwoColumnsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AEC00296B0B3A00D5DD40 /* TwoColumnsModel.swift */; };
+		0C4AEC03296B0FA300D5DD40 /* TwoColumnsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AEC02296B0FA300D5DD40 /* TwoColumnsController.swift */; };
+		0C4AEC06296B14B200D5DD40 /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AEC05296B14B200D5DD40 /* UIButton + Extension.swift */; };
+		0C4AEC08296B16AF00D5DD40 /* TwoColumnsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AEC07296B16AF00D5DD40 /* TwoColumnsCell.swift */; };
+		0CF2FD52296C9F8A0022ADCD /* AnswerColumnsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2FD51296C9F8A0022ADCD /* AnswerColumnsButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		0C4AEBEE29686E1800D5DD40 /* MultistageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultistageCollectionViewCell.swift; sourceTree = "<group>"; };
 		0C4AEBF0296877C000D5DD40 /* MultistageHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultistageHeaderReusableView.swift; sourceTree = "<group>"; };
 		0C4AEBF32969BCA700D5DD40 /* MultistageCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultistageCellButton.swift; sourceTree = "<group>"; };
+		0C4AEC00296B0B3A00D5DD40 /* TwoColumnsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoColumnsModel.swift; sourceTree = "<group>"; };
+		0C4AEC02296B0FA300D5DD40 /* TwoColumnsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoColumnsController.swift; sourceTree = "<group>"; };
+		0C4AEC05296B14B200D5DD40 /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
+		0C4AEC07296B16AF00D5DD40 /* TwoColumnsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoColumnsCell.swift; sourceTree = "<group>"; };
+		0CF2FD51296C9F8A0022ADCD /* AnswerColumnsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerColumnsButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +76,11 @@
 		0C4AEBD3296854E000D5DD40 /* VK AllCups 2022 part2 */ = {
 			isa = PBXGroup;
 			children = (
+				0CF60D11296DD343001626B4 /* DraggingItem */,
+				0C4AEC04296B149100D5DD40 /* Extensions */,
 				0C4AEBD4296854E000D5DD40 /* AppDelegate.swift */,
 				0C4AEBD6296854E000D5DD40 /* SceneDelegate.swift */,
+				0C4AEBFB296B0A2000D5DD40 /* TwoColumns */,
 				0C4AEBEA296858EE00D5DD40 /* Multistage */,
 				0C4AEBEB2968629300D5DD40 /* MainFlow */,
 				0C4AEBDD296854E200D5DD40 /* Assets.xcassets */,
@@ -80,11 +93,10 @@
 		0C4AEBEA296858EE00D5DD40 /* Multistage */ = {
 			isa = PBXGroup;
 			children = (
-				0C4AEBEC296862F300D5DD40 /* QuestionModel.swift */,
+				0C4AEBF7296B08E400D5DD40 /* Model */,
 				0C4AEBF22969BAA100D5DD40 /* Elements */,
-				0C4AEBE82968581D00D5DD40 /* MultistageController.swift */,
-				0C4AEBEE29686E1800D5DD40 /* MultistageCollectionViewCell.swift */,
-				0C4AEBF0296877C000D5DD40 /* MultistageHeaderReusableView.swift */,
+				0C4AEBF8296B08FD00D5DD40 /* Controller */,
+				0C4AEBF9296B090700D5DD40 /* View */,
 			);
 			path = Multistage;
 			sourceTree = "<group>";
@@ -104,6 +116,89 @@
 				0C4AEBF32969BCA700D5DD40 /* MultistageCellButton.swift */,
 			);
 			path = Elements;
+			sourceTree = "<group>";
+		};
+		0C4AEBF7296B08E400D5DD40 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C4AEBEC296862F300D5DD40 /* QuestionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0C4AEBF8296B08FD00D5DD40 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0C4AEBE82968581D00D5DD40 /* MultistageController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0C4AEBF9296B090700D5DD40 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0C4AEBEE29686E1800D5DD40 /* MultistageCollectionViewCell.swift */,
+				0C4AEBF0296877C000D5DD40 /* MultistageHeaderReusableView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0C4AEBFB296B0A2000D5DD40 /* TwoColumns */ = {
+			isa = PBXGroup;
+			children = (
+				0CF2FD50296C9F4B0022ADCD /* Elements */,
+				0C4AEBFF296B0AFA00D5DD40 /* View */,
+				0C4AEBFE296B0AE400D5DD40 /* Controller */,
+				0C4AEBFC296B0AD300D5DD40 /* Model */,
+			);
+			path = TwoColumns;
+			sourceTree = "<group>";
+		};
+		0C4AEBFC296B0AD300D5DD40 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C4AEC00296B0B3A00D5DD40 /* TwoColumnsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0C4AEBFE296B0AE400D5DD40 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0C4AEC02296B0FA300D5DD40 /* TwoColumnsController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0C4AEBFF296B0AFA00D5DD40 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0C4AEC07296B16AF00D5DD40 /* TwoColumnsCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0C4AEC04296B149100D5DD40 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0C4AEC05296B14B200D5DD40 /* UIButton + Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0CF2FD50296C9F4B0022ADCD /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				0CF2FD51296C9F8A0022ADCD /* AnswerColumnsButton.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		0CF60D11296DD343001626B4 /* DraggingItem */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DraggingItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,11 +272,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CF2FD52296C9F8A0022ADCD /* AnswerColumnsButton.swift in Sources */,
 				0C4AEBF42969BCA700D5DD40 /* MultistageCellButton.swift in Sources */,
+				0C4AEC06296B14B200D5DD40 /* UIButton + Extension.swift in Sources */,
+				0C4AEC08296B16AF00D5DD40 /* TwoColumnsCell.swift in Sources */,
 				0C4AEBE92968581D00D5DD40 /* MultistageController.swift in Sources */,
 				0C4AEBEF29686E1800D5DD40 /* MultistageCollectionViewCell.swift in Sources */,
+				0C4AEC03296B0FA300D5DD40 /* TwoColumnsController.swift in Sources */,
 				0C4AEBD9296854E000D5DD40 /* ViewController.swift in Sources */,
 				0C4AEBD5296854E000D5DD40 /* AppDelegate.swift in Sources */,
+				0C4AEC01296B0B3A00D5DD40 /* TwoColumnsModel.swift in Sources */,
 				0C4AEBF1296877C000D5DD40 /* MultistageHeaderReusableView.swift in Sources */,
 				0C4AEBD7296854E000D5DD40 /* SceneDelegate.swift in Sources */,
 				0C4AEBED296862F300D5DD40 /* QuestionModel.swift in Sources */,

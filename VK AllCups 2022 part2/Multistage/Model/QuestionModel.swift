@@ -7,7 +7,7 @@
 
 import Foundation
 
-class QuestionsModel {
+final class QuestionsModel {
     var isAnswered = false
     let question: String
     var answers: [Answer]
@@ -78,7 +78,28 @@ extension QuestionsModel {
             Answer(textAnswer: "2013", isTrueAnswer: false, countEnter: 0, isTaped: false),
             Answer(textAnswer: "2014", isTrueAnswer: true, countEnter: 0, isTaped: false)
 
-        ])
+        ]),
+        QuestionsModel(question: "В каком году был представлен Swift", answers: [
+            Answer(textAnswer: "2011", isTrueAnswer: false, countEnter: 0, isTaped: false),
+            Answer(textAnswer: "2012", isTrueAnswer: false, countEnter: 0, isTaped: false),
+            Answer(textAnswer: "2013", isTrueAnswer: false, countEnter: 0, isTaped: false),
+            Answer(textAnswer: "2014", isTrueAnswer: true, countEnter: 0, isTaped: false)
+
+        ]),
+        QuestionsModel(question: "В каком году был представлен Swift", answers: [
+            Answer(textAnswer: "2011", isTrueAnswer: false, countEnter: 0, isTaped: false),
+            Answer(textAnswer: "2012", isTrueAnswer: false, countEnter: 0, isTaped: false),
+            Answer(textAnswer: "2013", isTrueAnswer: false, countEnter: 0, isTaped: false),
+            Answer(textAnswer: "2014", isTrueAnswer: true, countEnter: 0, isTaped: false)
+
+        ]),
+        QuestionsModel(question: "В каком году был представлен Swift", answers: [
+            Answer(textAnswer: "2011", isTrueAnswer: false, countEnter: 0, isTaped: false),
+            Answer(textAnswer: "2012", isTrueAnswer: false, countEnter: 0, isTaped: false),
+            Answer(textAnswer: "2013", isTrueAnswer: false, countEnter: 0, isTaped: false),
+            Answer(textAnswer: "2014", isTrueAnswer: true, countEnter: 0, isTaped: false)
+
+        ]),
 //        QuestionsModel(question: "Сколько ног у паука", answers: [
 //            Answer(answer: (answer: "Одна", isTrue: false, isSelected: false)),
 //            Answer(answer: (answer: "Две", isTrue: true, isSelected: false)),

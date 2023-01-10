@@ -97,18 +97,18 @@ class MultistageController: UICollectionViewController, UICollectionViewDelegate
     //MARK: - Private methods
 
     fileprivate func animationCell(_ cell: MultistageCollectionViewCell, index: IndexPath?, withReload: Bool) {
-        cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
+        cell.layer.transform = CATransform3DMakeScale(0.2,0.2,1)
 
         UIView.animate(withDuration: 0.3, animations: {
-            cell.layer.transform = CATransform3DMakeScale(1.05,1.05,1)
+            cell.layer.transform = CATransform3DMakeScale(1.00,1.00,1)
         },completion: { finished in
-            UIView.animate(withDuration: 0.1, animations: {
-                cell.layer.transform = CATransform3DMakeScale(1,1,1)
-
-            }) { finished in
+//            UIView.animate(withDuration: 0.1, animations: {
+//                cell.layer.transform = CATransform3DMakeScale(1,1,1)
+//
+//            }) { finished in
                 guard let index else { return }
                 withReload ? self.collectionView.reloadItems(at: [index]) : nil
-            }
+           // }
         })
     }
 
