@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIButton {
+
     convenience init(
         title: String,
         backgroundCollor: UIColor = .white,
@@ -30,4 +31,6 @@ extension UIButton {
             self.layer.borderWidth = 1
         }
     }
+
+
 }

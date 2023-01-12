@@ -102,13 +102,9 @@ class MultistageController: UICollectionViewController, UICollectionViewDelegate
         UIView.animate(withDuration: 0.3, animations: {
             cell.layer.transform = CATransform3DMakeScale(1.00,1.00,1)
         },completion: { finished in
-//            UIView.animate(withDuration: 0.1, animations: {
-//                cell.layer.transform = CATransform3DMakeScale(1,1,1)
-//
-//            }) { finished in
-                guard let index else { return }
-                withReload ? self.collectionView.reloadItems(at: [index]) : nil
-           // }
+
+            guard let index else { return }
+            withReload ? self.collectionView.reloadItems(at: [index]) : nil
         })
     }
 

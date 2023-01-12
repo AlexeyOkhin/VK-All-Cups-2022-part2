@@ -22,6 +22,10 @@
 		0C4AEC03296B0FA300D5DD40 /* TwoColumnsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AEC02296B0FA300D5DD40 /* TwoColumnsController.swift */; };
 		0C4AEC06296B14B200D5DD40 /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AEC05296B14B200D5DD40 /* UIButton + Extension.swift */; };
 		0C4AEC08296B16AF00D5DD40 /* TwoColumnsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AEC07296B16AF00D5DD40 /* TwoColumnsCell.swift */; };
+		0CE8FB5229705AB5009E14A0 /* TitleRatingStarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE8FB5129705AB5009E14A0 /* TitleRatingStarController.swift */; };
+		0CE8FB5729705B33009E14A0 /* TitleRatingStarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE8FB5629705B33009E14A0 /* TitleRatingStarCell.swift */; };
+		0CE8FB5929705B4F009E14A0 /* TitleRatingStarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE8FB5829705B4F009E14A0 /* TitleRatingStarModel.swift */; };
+		0CE8FB5C29705C8B009E14A0 /* StarStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE8FB5B29705C8B009E14A0 /* StarStack.swift */; };
 		0CF2FD52296C9F8A0022ADCD /* AnswerColumnsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2FD51296C9F8A0022ADCD /* AnswerColumnsButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +47,10 @@
 		0C4AEC02296B0FA300D5DD40 /* TwoColumnsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoColumnsController.swift; sourceTree = "<group>"; };
 		0C4AEC05296B14B200D5DD40 /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
 		0C4AEC07296B16AF00D5DD40 /* TwoColumnsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoColumnsCell.swift; sourceTree = "<group>"; };
+		0CE8FB5129705AB5009E14A0 /* TitleRatingStarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleRatingStarController.swift; sourceTree = "<group>"; };
+		0CE8FB5629705B33009E14A0 /* TitleRatingStarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleRatingStarCell.swift; sourceTree = "<group>"; };
+		0CE8FB5829705B4F009E14A0 /* TitleRatingStarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleRatingStarModel.swift; sourceTree = "<group>"; };
+		0CE8FB5B29705C8B009E14A0 /* StarStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarStack.swift; sourceTree = "<group>"; };
 		0CF2FD51296C9F8A0022ADCD /* AnswerColumnsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerColumnsButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +84,7 @@
 		0C4AEBD3296854E000D5DD40 /* VK AllCups 2022 part2 */ = {
 			isa = PBXGroup;
 			children = (
+				0CE8FB5029705A71009E14A0 /* TitleRatingStar */,
 				0CF60D11296DD343001626B4 /* DraggingItem */,
 				0C4AEC04296B149100D5DD40 /* Extensions */,
 				0C4AEBD4296854E000D5DD40 /* AppDelegate.swift */,
@@ -186,6 +195,49 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		0CE8FB5029705A71009E14A0 /* TitleRatingStar */ = {
+			isa = PBXGroup;
+			children = (
+				0CE8FB5A29705C6D009E14A0 /* Elements */,
+				0CE8FB5529705AF7009E14A0 /* Model */,
+				0CE8FB5429705AF5009E14A0 /* View */,
+				0CE8FB5329705AF1009E14A0 /* Controller */,
+			);
+			path = TitleRatingStar;
+			sourceTree = "<group>";
+		};
+		0CE8FB5329705AF1009E14A0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0CE8FB5129705AB5009E14A0 /* TitleRatingStarController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0CE8FB5429705AF5009E14A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0CE8FB5629705B33009E14A0 /* TitleRatingStarCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0CE8FB5529705AF7009E14A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0CE8FB5829705B4F009E14A0 /* TitleRatingStarModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0CE8FB5A29705C6D009E14A0 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				0CE8FB5B29705C8B009E14A0 /* StarStack.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
 		0CF2FD50296C9F4B0022ADCD /* Elements */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,13 +327,17 @@
 				0CF2FD52296C9F8A0022ADCD /* AnswerColumnsButton.swift in Sources */,
 				0C4AEBF42969BCA700D5DD40 /* MultistageCellButton.swift in Sources */,
 				0C4AEC06296B14B200D5DD40 /* UIButton + Extension.swift in Sources */,
+				0CE8FB5229705AB5009E14A0 /* TitleRatingStarController.swift in Sources */,
 				0C4AEC08296B16AF00D5DD40 /* TwoColumnsCell.swift in Sources */,
+				0CE8FB5C29705C8B009E14A0 /* StarStack.swift in Sources */,
 				0C4AEBE92968581D00D5DD40 /* MultistageController.swift in Sources */,
 				0C4AEBEF29686E1800D5DD40 /* MultistageCollectionViewCell.swift in Sources */,
+				0CE8FB5929705B4F009E14A0 /* TitleRatingStarModel.swift in Sources */,
 				0C4AEC03296B0FA300D5DD40 /* TwoColumnsController.swift in Sources */,
 				0C4AEBD9296854E000D5DD40 /* ViewController.swift in Sources */,
 				0C4AEBD5296854E000D5DD40 /* AppDelegate.swift in Sources */,
 				0C4AEC01296B0B3A00D5DD40 /* TwoColumnsModel.swift in Sources */,
+				0CE8FB5729705B33009E14A0 /* TitleRatingStarCell.swift in Sources */,
 				0C4AEBF1296877C000D5DD40 /* MultistageHeaderReusableView.swift in Sources */,
 				0C4AEBD7296854E000D5DD40 /* SceneDelegate.swift in Sources */,
 				0C4AEBED296862F300D5DD40 /* QuestionModel.swift in Sources */,

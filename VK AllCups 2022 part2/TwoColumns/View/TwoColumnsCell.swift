@@ -135,7 +135,7 @@ class TwoColumnsCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.layer.cornerRadius = 8
-        contentView.layer.borderColor = UIColor.systemGray.cgColor
+        contentView.layer.borderColor = UIColor.systemGray4.cgColor
         contentView.layer.borderWidth = 1
     }
 }
