@@ -67,10 +67,8 @@ class MultistageController: UICollectionViewController, UICollectionViewDelegate
             self.questions[cellId].answers[id!].countEnter += 1
             self.questions[cellId].getPercents()
 
-            //collectionView.reloadItems(at: [indexPath])
-
             self.animationCell(cell, index: indexPath, withReload: true)
-            //collectionView.reloadData()
+
         }
 
         return cell
@@ -99,7 +97,7 @@ class MultistageController: UICollectionViewController, UICollectionViewDelegate
     fileprivate func animationCell(_ cell: MultistageCollectionViewCell, index: IndexPath?, withReload: Bool) {
         cell.layer.transform = CATransform3DMakeScale(0.2,0.2,1)
 
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.4, animations: {
             cell.layer.transform = CATransform3DMakeScale(1.00,1.00,1)
         },completion: { finished in
 

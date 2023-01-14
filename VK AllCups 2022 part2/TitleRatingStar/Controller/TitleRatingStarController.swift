@@ -11,7 +11,6 @@ class TitleRatingStarController: UICollectionViewController, UICollectionViewDel
 
     var dataTitles = TitleRatingStarModel.sempleData
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,10 +31,8 @@ class TitleRatingStarController: UICollectionViewController, UICollectionViewDel
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
@@ -55,6 +52,5 @@ class TitleRatingStarController: UICollectionViewController, UICollectionViewDel
         let inset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         return inset
     }
-
 
 }

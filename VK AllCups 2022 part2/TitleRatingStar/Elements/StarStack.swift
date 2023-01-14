@@ -84,7 +84,7 @@ class StartsStack: UIStackView {
 
         button.transform = CGAffineTransformMakeScale(-1, 1)
 
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.4, animations: {
 
             button.transform = CGAffineTransformMakeScale(1,1)
 

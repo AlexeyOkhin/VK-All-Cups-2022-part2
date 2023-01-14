@@ -84,6 +84,5 @@ class MultistageCellButton: UIView {
             answerTrueImage.trailingAnchor.constraint(equalTo: percentLabel.leadingAnchor, constant: -16)
         ])
 
-        
     }
 }
