@@ -142,7 +142,7 @@
         <!--Перетаскивание элементов-->
         <scene sceneID="3xu-ow-U5d">
             <objects>
-                <collectionViewController id="u2E-8z-diS" sceneMemberID="viewController">
+                <collectionViewController id="u2E-8z-diS" customClass="DraggingController" customModule="VK_AllCups_2022_part2" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="pOT-1a-zoH">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
