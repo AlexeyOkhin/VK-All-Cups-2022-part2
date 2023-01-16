@@ -12,51 +12,52 @@ class DraggingCell: UICollectionViewCell {
     static let reuseID = "DraggingCell"
 
     private var arrayQuestionLabels = [UILabel]()
-    //private var arrayAnswerLabels = [UILabel]()
-
-//    private lazy var bottomStack: UIStackView = {
-//        let stack = UIStackView()
-//        stack.translatesAutoresizingMaskIntoConstraints = false
-//        stack.backgroundColor = .clear
-//        stack.distribution = .fillEqually
-//        stack.axis = .horizontal
-//        stack.alignment = .leading
-//        stack.spacing = 4
-//        return stack
-//    }()
-//
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        makeConstreints()
+        makeConstraint()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        fatalError("init(coder:) has not been implemented")
     }
 
-    func configureCell(model: DraggingModel) {
-        model.arrayQuestionText.forEach { word in
-            let label = UILabel()
-            label.text = word
-            arrayQuestionLabels.append(label)
-        }
+    private lazy var mainContainer = UIView()
 
-        model.answerWords.forEach { word in
-            let label = UILabel()
-            label.text = word
-            arrayAnswerLabels.append(label)
-            bottomStack.addArrangedSubview(label)
+    private lazy var labelTitle: UILabel? = {
+        let label = UILabel()
+        label.numberOfLines = 1
+        label.font = .systemFont(ofSize: 22)
+        label.textColor = .black
+        label.backgroundColor = .clear
+        return label
+    }()
+
+    private func makeConstraint() {
+        guard let labelTitle else { return }
+        contentView.addSubview(labelTitle)
+        labelTitle.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            labelTitle.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+            labelTitle.topAnchor.constraint(equalTo: contentView.topAnchor),
+            labelTitle.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+            labelTitle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+    }
+
+    func configure(model: (String, Bool)) {
+        guard let labelTitle else { return }
+        labelTitle.text = model.0
+        if !model.1 {
+            labelTitle.backgroundColor = .systemGray5
+            labelTitle.textColor = .systemGray5
         }
     }
 
-    private func makeConstreints() {
-
-        contentView.addSubview(bottomStack)
-        bottomStack.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
-        bottomStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16).isActive = true
-        bottomStack.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
-        bottomStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16).isActive = true
-        bottomStack.widthAnchor.constraint(equalToConstant: 350).isActive = true
+    override func prepareForReuse() {
+        super.prepareForReuse()
+       labelTitle = nil
     }
 }

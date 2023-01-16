@@ -36,7 +36,7 @@ class TitleRatingStarController: UICollectionViewController, UICollectionViewDel
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        return 100
+        return dataTitles.count * 10
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -52,5 +52,22 @@ class TitleRatingStarController: UICollectionViewController, UICollectionViewDel
         let inset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         return inset
     }
+
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        var offset = collectionView.contentOffset
+        let height = collectionView.contentSize.height
+        if offset.y < height/4 {
+            offset.y += height/2
+            collectionView.setContentOffset(offset, animated: false)
+        } else if offset.y > height/4 * 3 {
+            offset.y -= height/2
+            collectionView.setContentOffset(offset, animated: false)
+        }
+    }
+
+    override func viewDidLayoutSubviews() {
+          super.viewDidLayoutSubviews()
+        self.collectionView.scrollToItem(at: IndexPath(item: 10, section: 0), at: .left, animated: true)
+        }
 
 }

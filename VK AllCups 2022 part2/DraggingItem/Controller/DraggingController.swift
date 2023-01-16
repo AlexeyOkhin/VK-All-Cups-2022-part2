@@ -10,6 +10,7 @@ import UIKit
 class DraggingController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var draggingsData = DraggingModel.makeModels
+    var frameCell: CGRect?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,12 +19,11 @@ class DraggingController: UICollectionViewController, UICollectionViewDelegateFl
         layout.estimatedItemSize = LeftAlignmentFlowLayout.automaticSize
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 8
-        layout.footerReferenceSize = CGSize(width: 100, height: 100)
+        layout.footerReferenceSize = CGSize(width: 100, height: 80)
 
-//        let layout = UICollectionViewFlowLayout()
-//        layout.scrollDirection = .vertical
-//        layout.estimatedItemSize = CGSize(width: 350, height: 500)
         self.collectionView.collectionViewLayout = layout
+
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
 
         // Configure Collection
         self.collectionView.showsVerticalScrollIndicator = false
@@ -31,35 +31,28 @@ class DraggingController: UICollectionViewController, UICollectionViewDelegateFl
 
         self.collectionView!.register(DraggingCell.self, forCellWithReuseIdentifier: DraggingCell.reuseID)
         self.collectionView.register(FooterAnswerCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: FooterAnswerCell.identifireID)
-
     }
 
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
 
-        return 1
+        return draggingsData.count * 10
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(draggingsData[section].arrayQuestionText.count)
-        return draggingsData[section].arrayQuestionText.count
+        
+        return draggingsData[section % draggingsData.count].arrayQuestionText.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DraggingCell.reuseID, for: indexPath) as? DraggingCell
     
-        cell?.configureCell(model: draggingsData[indexPath.section])
-    
+        cell?.configure(model: draggingsData[indexPath.section % draggingsData.count].arrayQuestionText[indexPath.row])
+        frameCell = cell?.frame
+
         return cell ?? UICollectionViewCell()
-    }
-
-    // MARK: UICollectionViewDelegate
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let inset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
-        return inset
     }
 
     override func collectionView(_ collectionView: UICollectionView,
@@ -72,7 +65,26 @@ class DraggingController: UICollectionViewController, UICollectionViewDelegateFl
             for: indexPath) as? FooterAnswerCell
         else { return UICollectionViewCell() }
 
+        foooterView.configureFooter(arrayAnswer: draggingsData[indexPath.section % draggingsData.count].answerWords, viewForMove: collectionView, cellFrame: frameCell!)
+  
         return foooterView
     }
+
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        var offset = collectionView.contentOffset
+        let height = collectionView.contentSize.height
+        if offset.y < height/4 {
+            offset.y += height/2
+            collectionView.setContentOffset(offset, animated: false)
+        } else if offset.y > height/4 * 3 {
+            offset.y -= height/2
+            collectionView.setContentOffset(offset, animated: false)
+        }
+    }
+
+    override func viewDidLayoutSubviews() {
+          super.viewDidLayoutSubviews()
+        self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 10), at: .left, animated: true)
+        }
 
 }

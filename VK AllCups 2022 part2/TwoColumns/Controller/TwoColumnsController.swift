@@ -35,8 +35,8 @@ class TwoColumnsCollectionViewController: UICollectionViewController, UICollecti
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
 
-        return 100
-        //questions.count * 10
+        return questions.count * 10
+
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -86,21 +86,20 @@ class TwoColumnsCollectionViewController: UICollectionViewController, UICollecti
         }
     }
 
-//    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        var offset = collectionView.contentOffset
-//        let height = collectionView.contentSize.height
-//        if offset.y < height/4 {
-//            offset.y += height/2
-//            collectionView.setContentOffset(offset, animated: false)
-//        } else if offset.y > height/4 * 3 {
-//            offset.y -= height/2
-//            collectionView.setContentOffset(offset, animated: false)
-//        }
-//    }
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        var offset = collectionView.contentOffset
+        let height = collectionView.contentSize.height
+        if offset.y < height/4 {
+            offset.y += height/2
+            collectionView.setContentOffset(offset, animated: false)
+        } else if offset.y > height/4 * 3 {
+            offset.y -= height/2
+            collectionView.setContentOffset(offset, animated: false)
+        }
+    }
 
-//    override func viewDidLayoutSubviews() {
-//          super.viewDidLayoutSubviews()
-//        self.collectionView.scrollToItem(at: IndexPath(item: 1, section: 20), at: .left, animated: true)
-//        }
-
+    override func viewDidLayoutSubviews() {
+          super.viewDidLayoutSubviews()
+        self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 10), at: .left, animated: true)
+        }
 }
